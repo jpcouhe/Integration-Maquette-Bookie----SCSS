@@ -211,7 +211,7 @@ article {
 .hosting {
     background-color: #f2f2f2;
     border-radius: 20px;
-    padding: 45px 30px;
+    padding: 45px 35px;
     width: 63%;
     height: auto;
 }
@@ -254,12 +254,12 @@ article {
     font-weight: 700;
 }
 
-.hosting_stars {
+.stars {
     margin: 0 10px;
     color: #0065fc;
 }
 
-.hosting_stars .fa-grey {
+.stars .fa-grey {
     color: #f2f2f2;
 }
 
@@ -274,9 +274,63 @@ article {
 /* -----------------Section Popularity ---------------------*/
 
 .popularity {
-    background-color: aqua;
+    background-color: #f2f2f2;
     border-radius: 20px;
-    padding: 40px;
+    padding: 45px 35px 30px;
     width: 33%;
     height: auto;
+}
+
+.popularity_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popularity_header h2 {
+    font-size: 25px;
+}
+.popularity_header i {
+    font-size: 25px;
+}
+
+.popularity_card {
+    display: flex;
+    background-color: #fff;
+    border-radius: 20px;
+    margin: 30px 0;
+    padding: 7px;
+}
+
+.popularity_card:last-child {
+    margin-bottom: 0;
+}
+
+.popularity_card img {
+    height: 140px;
+    width: 130px;
+    object-fit: cover;
+    border-radius: 20px 0 0 20px;
+}
+.popularity_card .popularity_info {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.popularity_card .popularity_info h4 {
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+.popularity_card .popularity_info p {
+    font-size: 16px;
+    margin: 10px 10px;
+}
+
+.popularity_info .stars {
+    margin-top: auto;
+}
+
+.popularity_info p span {
+    font-weight: 700;
 }
