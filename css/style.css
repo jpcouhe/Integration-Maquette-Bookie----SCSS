@@ -19,6 +19,14 @@ a {
     text-decoration: none;
 }
 
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+/* ---------------------------------------------------------SECTION HEADER ---------------------------------------------------*/
+
+
 header {
     display: flex;
     justify-content: space-between;
@@ -56,4 +64,64 @@ nav ul li a:hover {
 .active {
     color: #0065fc;
     border-top: 4px solid #0065fc;
+}
+
+
+/* ------------------------------------------------SECTION FORM -------------------------------------------------------------------*/
+
+.form_section h1 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.form_section p {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+/* Permet d'enlever l'écart entre le label et le input */
+
+form {
+    font-size: 0;
+}
+
+.form_section form label {
+    font-size: 17px;
+    border-radius: 10px 0px 0px 10px;
+    display: inline-block;
+    background-color: #eee;
+    border-top: 1px solid #eee;
+    border-left: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 14px 17px 17px;
+    border: #eee;
+}
+
+.form_section form input[type="text"] {
+    padding: 17px;
+    border: none;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    width: 230px;
+    
+    
+}
+
+form input::placeholder {
+    color: #000;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.btn {
+    width: 130px;
+    padding: 15px;
+    border-radius: 0 10px 10px 0;
+    border: 1px solid #0065fc;
+    background-color: #0065fc;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px ;
 }
