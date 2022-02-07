@@ -43,19 +43,52 @@
             </nav>
         </header>
         <main class="container">
+            <!-- Section du FORMULAIRE -->
             <section class="form_section">
                 <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
-                <p>En plein centre ville ou en pleine nature</p> 
+                <p>En plein centre ville ou en pleine nature</p>
                 <form action="#">
-                    <label for="town"><i class="fas fa-map-marker-alt"></i></label>
+                    <label for="town"
+                        ><i class="fas fa-map-marker-alt"></i
+                    ></label>
                     <input
-                      name="town"
-                      id="town"
-                      type="text"
-                      placeholder="Marseille, France"
+                        name="town"
+                        id="town"
+                        type="text"
+                        placeholder="Marseille, France"
                     />
                     <button class="btn" type="submit">Rechercher</button>
-                  </form>
+                </form>
+            </section>
+            <!-- Section du FIltre -->
+            <section class="filter">
+                <h2>Filtres</h2>
+                <div class="filter_container">
+                    <div class="filter_box">
+                        <div class="filter_box_logo">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="filter_box_name">Économique</div>
+                    </div>
+                    <div class="filter_box">
+                        <div class="filter_box_logo">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <div class="filter_box_name">Familial</div>
+                    </div>
+                    <div class="filter_box">
+                        <div class="filter_box_logo">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="filter_box_name">Romantique</div>
+                    </div>
+                    <div class="filter_box">
+                        <div class="filter_box_logo">
+                            <i class="fas fa-dog"></i>
+                        </div>
+                        <div class="filter_box_name">Animaux autorisés</div>
+                    </div>
+                </div>
             </section>
         </main>
     </body>
