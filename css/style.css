@@ -79,7 +79,7 @@ nav ul li a:hover {
 
 .form_section p {
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 500;
     margin-bottom: 20px;
 }
 
@@ -345,7 +345,7 @@ article {
     height: 500px;
     border-radius: 3px;
     width: 100%;
-    margin: 40px auto;
+    margin: 40px auto 0;
 }
 
 .item {
@@ -353,6 +353,11 @@ article {
     margin-bottom: 35px;
     border-radius: 20px;
     position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.item:hover {
+    transform: scale(1.1);
 }
 
 .Activity1 {
@@ -392,8 +397,45 @@ article {
     bottom: -1px;
     left: 0;
     border-radius: 0 0 20px 20px;
+    overflow: hidden;
+    
 }
 
 .activity_name h5{
     font-size: 16px;
+}
+/* --------------------Footer------------------------ */
+
+footer {
+    background-color: #f2f2f2;
+    margin: 0 auto ;
+    max-width: 1440px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 45px;
+}
+
+.footer-div {
+    margin-right: 260px;
+}
+
+.footer-container h3 {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.footer-container ul li {
+    list-style-type: none;
+    font-size: 15px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.footer-container ul li a {
+    text-decoration: none;
+    color: black;
 }
