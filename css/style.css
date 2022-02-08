@@ -108,7 +108,9 @@ a.active::before {
 /* Permet d'enlever l'écart entre le label et le input */
 
 form {
-    font-size: 0;
+    /* font-size: 0; */
+    margin-bottom: 30px;
+    display: inline-flex;
 }
 
 .form_section form label {
@@ -119,14 +121,15 @@ form {
     border-top: 1px solid #f2f2f2;
     border-left: 1px solid #f2f2f2;
     border-bottom: 1px solid #f2f2f2;
-    padding: 14px 17px 17px;
+    padding: 20px;
 }
 
 .form_section form input[type="text"] {
-    padding: 17px;
+    padding: 20px;
     border: none;
     border-top: 1px solid #f2f2f2;
     border-bottom: 1px solid #f2f2f2;
+    border-left: 1px solid #f2f2f2;
     width: 230px;
 }
 
@@ -138,7 +141,7 @@ form input::placeholder {
 
 .btn {
     width: 130px;
-    padding: 15px;
+    padding: 20px;
     border-radius: 0 10px 10px 0;
     border: 1px solid #0065fc;
     background-color: #0065fc;
@@ -223,7 +226,7 @@ form input::placeholder {
 }
 
 /* -------------------Section Hosting ----------------------------*/
-article {
+.hosting_and_popularity {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -254,6 +257,11 @@ article {
     box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.22);
     padding: 7px;
     margin-bottom: 35px;
+    transition: all 0.2s ease-in-out;
+}
+
+.hosting_card:hover {
+    transform: scale(1.12);
 }
 
 .hosting_card img {
@@ -385,6 +393,13 @@ article {
     transition: all 0.2s ease-in-out;
 }
 
+.item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    object-fit: cover;
+}
+
 .item:hover {
     transform: scale(1.1);
 }
@@ -393,44 +408,24 @@ article {
     height: 435px;
 }
 
-.Activity1 a {
-    background: url(/images/activites/3_medium/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg)
-        no-repeat center/cover;
-}
 .Activity2 {
     height: 240px;
 }
-.Activity2 a {
-    background: url(/images/activites/3_medium/paul-hermann-QFTrLdQIRhI-unsplash.jpg)
-        no-repeat center/cover;
-}
+
 .Activity3 {
     height: 160px;
 }
-.Activity3 a {
-    background: url(/images/activites/3_medium/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg)
-        no-repeat center/cover;
-}
+
 .Activity4 {
     height: 435px;
 }
-.Activity4 a {
-    background: url(/images/activites/3_medium/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg)
-        no-repeat center/cover;
-}
+
 .Activity5 {
     height: 200px;
 }
-.Activity5 a {
-    background: url(/images/activites/3_medium/florian-wehde-xW9e8gdotxI-unsplash.jpg)
-        no-repeat center/cover;
-}
+
 .Activity6 {
     height: 200px;
-}
-.Activity6 a {
-    background: url(/images/activites/3_medium/lena-paulin-wH2-EJoDcV0-unsplash.jpg)
-        no-repeat center/cover;
 }
 
 .activity_name {
