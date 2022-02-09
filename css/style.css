@@ -254,13 +254,12 @@ form input::placeholder {
 .hosting_card {
     display: flex;
     flex-direction: column;
-    width: 250px;
-    height: auto;
+    width: 30%;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.22);
     padding: 7px;
-    margin-bottom: 35px;
+    margin-bottom: 5%;
     transition: all 0.2s ease-in-out;
 }
 
@@ -280,7 +279,7 @@ form input::placeholder {
     font-size: 17px;
 }
 .hosting_card .hosting_card_price {
-    margin: 0 10px 7px;
+    margin: 0 10px 15px;
     font-weight: 400;
     font-size: 15px;
 }
@@ -290,7 +289,7 @@ form input::placeholder {
 }
 
 .stars {
-    margin: 0 10px;
+    margin:auto 10px 0;
     color: #0065fc;
 }
 
