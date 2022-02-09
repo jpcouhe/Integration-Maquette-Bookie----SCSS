@@ -43,10 +43,11 @@ header img {
     width: 130px;
     padding-left: 35px;
 }
-
+nav {
+    margin-right: 20px;
+}
 nav ul {
     display: flex;
-    margin: 0 15px;
 }
 /* margin pour les ul pour que les 2 barres bleues prennent la totalité de la boite */
 
@@ -90,12 +91,6 @@ a.active::before {
     background-color: #0065fc;
 }
 
-@media screen and (max-width: 992px) {
-}
-
-@media screen and (max-width: 768px) {
-}
-
 /* ------------------------------------------------SECTION FORM -------------------------------------------------------------------*/
 .form_section {
     margin-bottom: 20px;
@@ -111,12 +106,12 @@ a.active::before {
     margin-bottom: 20px;
 }
 
-/* Permet d'enlever l'écart entre le label et le input */
-
 form {
     margin-bottom: 30px;
     display: flex;
 }
+
+/* Permet d'enlever l'écart entre le label et le input */
 
 .form_section form label {
     font-size: 17px;
@@ -176,7 +171,7 @@ form input::placeholder {
     align-items: center;
     flex-wrap: wrap;
     height: 45px;
-    margin: 0 12px;
+    margin: 0 12px 15px;
     border: 2px solid #f2f2f2;
     border-radius: 30px;
 }
@@ -229,13 +224,20 @@ form input::placeholder {
     color: #0065fc;
 }
 
-/* -------------------Section Hosting ----------------------------*/
-.hosting_and_popularity {
+.information p {
+    margin: 0;
+}
+
+/* Container Hosting and Popularity */
+
+.hosting_and_popularity_container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 40px;
 }
+
+/* -------------------Section Hosting ----------------------------*/
 
 .hosting {
     background-color: #f2f2f2;
@@ -253,18 +255,19 @@ form input::placeholder {
 }
 .hosting_card {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     width: 30%;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.22);
     padding: 7px;
-    margin-bottom: 5%;
+    margin-bottom: 40px;
     transition: all 0.2s ease-in-out;
 }
 
 .hosting_card:hover {
-    transform: scale(1.10);
+    transform: scale(1.1);
 }
 
 .hosting_card img {
@@ -289,7 +292,7 @@ form input::placeholder {
 }
 
 .stars {
-    margin:auto 10px 0;
+    margin: auto 10px 0;
     color: #0065fc;
 }
 
@@ -305,6 +308,7 @@ form input::placeholder {
     font-size: 18px;
     font-weight: 700;
 }
+
 /* -----------------Section Popularity ---------------------*/
 
 .popularity {
@@ -328,19 +332,27 @@ form input::placeholder {
     font-size: 25px;
 }
 
+.popularity_flex {
+    display: flex;
+    flex-direction: column;
+}
+
 .popularity_flex_card {
     display: flex;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.22);
-    margin: 30px 0;
-    padding: 2%;
+    margin: 40px 0;
+    padding: 1%;
     min-height: 130px;
     height: 100%;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
-.popularity_flex_card:hover{
+.popularity_flex_card:nth-child(2) {
+    margin: 0;
+}
+.popularity_flex_card:hover {
     transform: scale(1.1);
 }
 .popularity_img_card {
@@ -466,6 +478,7 @@ form input::placeholder {
 .activity_name h4 {
     font-size: 16px;
 }
+
 /* --------------------Footer------------------------ */
 
 footer {
@@ -475,6 +488,7 @@ footer {
 
 .footer-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin: 0 auto;
     padding: 45px;
@@ -504,8 +518,145 @@ footer {
 
 /* --------------------MEDIAQUERIES----------------- */
 
-@media screen and (max-width: 992px) {
+@media only screen and (max-width: 992px) {
+    .filter {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filter h2 {
+        margin-bottom: 20px;
+    }
+
+    .filter_container {
+        align-self: center;
+    }
+    .hosting_and_popularity_container {
+        flex-direction: column-reverse;
+    }
+
+    .popularity {
+        width: 100%;
+    }
+    .popularity_flex {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+    .popularity_flex_card {
+        width: 100%;
+        min-height: 150px;
+    }
+    .hosting {
+        width: 100%;
+        background-color: #fff;
+    }
+    .hosting_card {
+        width: 45%;
+    }
+    .hosting_card img {
+        min-height: 150px;
+    }
+
+    .activity_container {
+        flex-flow: column;
+        height: auto;
+        width: 100%;
+        margin: 40px auto 0;
+    }
+
+    .activity_container a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+    }
+    .item {
+        width: 100%;
+        margin-bottom: 35px;
+        border-radius: 20px;
+        position: relative;
+        transition: all 0.2s ease-in-out;
+    }
+    .Activity1,
+    .Activity2,
+    .Activity3,
+    .Activity4,
+    .Activity5,
+    .Activity6 {
+        height: 250px;
+    }
+    form {
+        justify-content: center;
+    }
+    .btn {
+        position: relative;
+        font-size: 0;
+        border-radius: 10px;
+    }
+    .btn:before {
+        position: absolute;
+        font-family: "FontAwesome";
+        font-size: 18px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        content: "\f002";
+        cursor: pointer;
+    }
 }
 
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        margin: 20px 0 40px;
+    }
+
+    .logo img {
+        padding-left: 0;
+    }
+    nav {
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+    nav ul {
+        width: 100%;
+    }
+    nav ul li {
+        width: 55%;
+    }
+    nav ul li a {
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    nav ul li a.active::before {
+        top: 100%;
+        left: 0px;
+        width: 100%;
+
+        z-index: 1;
+    }
+    nav ul li a::after {
+        top: 100%;
+        width: 100%;
+        background-color: #f2f2f2;
+        opacity: 1;
+        z-index: -1;
+    }
+
+    .hosting_card {
+        width: 100%;
+    }
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-div {
+        margin: 0;
+    }
 }
