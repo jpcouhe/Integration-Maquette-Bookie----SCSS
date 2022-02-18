@@ -49,11 +49,10 @@ nav {
 nav ul {
     display: flex;
 }
-/* margin pour les ul pour que les 2 barres bleues prennent la totalité de la boite */
+
 
 nav ul li a {
     padding: 51px 20px;
-
     width: 150px;
     display: block;
     text-align: center;
@@ -382,7 +381,7 @@ form input::placeholder {
 /* Min-height fixe la taille minimale pour la Flex_card */
 .popularity_info_card h3 {
     font-size: 17px;
-    margin: 0 10px;
+    margin: 5px 10px;
 }
 
 .popularity_info_card p {
@@ -519,6 +518,9 @@ footer {
 /* --------------------MEDIAQUERIES----------------- */
 
 @media only screen and (max-width: 992px) {
+    .container {
+        padding: 0;
+    }
     .filter {
         display: flex;
         flex-direction: column;
@@ -559,7 +561,9 @@ footer {
     .hosting_card img {
         min-height: 150px;
     }
-
+    .activity, .form_section {
+        padding: 0 35px;
+    }
     .activity_container {
         flex-flow: column;
         height: auto;
@@ -638,7 +642,6 @@ footer {
         top: 100%;
         left: 0px;
         width: 100%;
-
         z-index: 1;
     }
     nav ul li a::after {
