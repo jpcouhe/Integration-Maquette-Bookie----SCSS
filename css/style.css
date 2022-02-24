@@ -579,9 +579,8 @@ footer {
         height: 170px;
     }
 
-    .activity,
-    .form_section {
-        padding: 0 35px;
+    .activity{
+        padding: 0 15px;
     }
     .activity-container {
         flex-flow: column;
@@ -613,8 +612,7 @@ footer {
     }
 
     @media only screen and (max-width: 768px) {
-        /* ---------------------------------------------------------HEADER --------------------------------------------------------------------*/
-
+    
         header {
             flex-direction: column;
             height: auto;
@@ -666,17 +664,17 @@ footer {
             font-size: 12px;
             align-self: flex-start;
         }
-
+ 
         .information-texte {
             align-items: flex-start;
-        }
+        } 
         .title {
             font-size: 20px;
         }
 
         .hosting {
-            padding-left: 15px;
-            padding-right: 15px;
+            padding: 45px 15px 10px;
+
         }
         .popularity {
             padding-left: 15px;
@@ -686,8 +684,12 @@ footer {
             font-size: 15px;
             margin-left: 0;
         }
-        .stars {
+        .popularity-info-card .stars {
             margin-left: 0;
+        }
+
+        .hosting-card .stars{
+            margin-left: 10px;
         }
 
         .popularity-info-card p {
