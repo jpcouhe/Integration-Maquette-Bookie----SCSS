@@ -7,7 +7,7 @@
     margin: 0;
     padding: 0;
 }
-
+/* -------------------------PROPRIETES GENERALES --------------------------------*/
 body {
     font-family: "Raleway", sans-serif;
 }
@@ -26,8 +26,18 @@ a {
     margin: 0 auto;
     padding: 0 20px;
 }
+.title {
+    font-size: 25px;
+}
+.stars {
+    margin: auto 10px 0;
+    color: #0065fc;
+}
 
-/* ---------------------------------------------------------SECTION HEADER ---------------------------------------------------*/
+.stars .fa-grey {
+    color: #f2f2f2;
+}
+/* ---------------------------------------------------------HEADER ---------------------------------------------------*/
 
 header {
     display: flex;
@@ -50,7 +60,6 @@ nav ul {
     display: flex;
 }
 
-
 nav ul li a {
     padding: 51px 20px;
     width: 150px;
@@ -59,9 +68,10 @@ nav ul li a {
     font-weight: 600;
     position: relative;
 }
+
 /* Pseudo element sinon lors hover scintillement du à bordure */
 
-nav ul li a::after {
+nav ul li .header-link::after {
     content: "";
     position: absolute;
     top: -2px;
@@ -71,8 +81,10 @@ nav ul li a::after {
     background-color: #0065fc;
     opacity: 0;
 }
-
-a:hover:after {
+.header-link:hover {
+    color: #0065fc;
+}
+.header-link:hover:after {
     opacity: 1;
 }
 
@@ -80,7 +92,7 @@ a:hover:after {
     color: #0065fc;
 }
 
-a.active::before {
+.header-link.active::before {
     content: "";
     position: absolute;
     top: -2px;
@@ -91,38 +103,39 @@ a.active::before {
 }
 
 /* ------------------------------------------------SECTION FORM -------------------------------------------------------------------*/
-.form_section {
+.search-section {
     margin-bottom: 20px;
 }
-.form_section h1 {
+.search-section h1 {
     font-size: 25px;
     margin-bottom: 20px;
 }
 
-.form_section p {
+.search-section .search-section-texte {
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 20px;
 }
 
-form {
+.search-section form {
     margin-bottom: 30px;
     display: flex;
 }
 
 /* Permet d'enlever l'écart entre le label et le input */
 
-.form_section form label {
-    font-size: 17px;
+.search-section form label {
+    font-size: 20px;
     border-radius: 10px 0px 0px 10px;
     background-color: #f2f2f2;
     border-top: 1px solid #f2f2f2;
     border-left: 1px solid #f2f2f2;
     border-bottom: 1px solid #f2f2f2;
     padding: 20px;
+    text-align: center;
 }
 
-.form_section form input[type="text"] {
+.search-section form input[type="text"] {
     padding: 20px;
     border: none;
     border-top: 1px solid #f2f2f2;
@@ -131,13 +144,13 @@ form {
     width: 230px;
 }
 
-form input::placeholder {
+.search-section form input::placeholder {
     color: #000;
     font-weight: 700;
     font-size: 16px;
 }
 
-.btn {
+.search-section .btn {
     width: 130px;
     padding: 20px;
     border-radius: 0 10px 10px 0;
@@ -149,87 +162,68 @@ form input::placeholder {
     font-size: 16px;
 }
 
-/* -------------------------------------------------Section FILTRE--------------------------------------------------------- */
-.filter {
+.search-filter {
     display: flex;
     align-items: center;
 }
-.filter h2 {
-    font-size: 20px;
-    margin-right: 6px;
-}
 
-.filter_container {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.filter_box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 45px;
-    margin: 0 12px 15px;
-    border: 2px solid #f2f2f2;
-    border-radius: 30px;
-}
-
-.filter_box:hover {
-    background-color: #deebff;
-}
-
-.filter_box:hover .filter_box_logo {
-    background-color: #fff;
-}
-/* Centrer le Logo avec Line-height et text_align */
-.filter_box_logo {
-    height: 45px;
-    width: 45px;
-    line-height: 45px;
-    text-align: center;
-    color: #0065fc;
-    border: 1px solid #f2f2f2;
-    background-color: #deebff;
-    font-size: 20px;
-    border-radius: 50%;
-    transform: translate(-2px, -2px);
-}
-
-/* translate pour intégrer la bordure */
-
-.filter_box_name {
-    margin: 0 20px;
+.search-filter-box {
+    display: inline-block;
+    margin: 0 10px;
+    padding-right: 15px;
+    border: 2px solid #d9d9d9;
+    border-radius: 200px;
+    cursor: pointer;
     font-weight: 700;
 }
 
-/* ------------------------------------------------------Section Information ----------------------------------------------- */
+.search-filter-box:hover {
+    background-color: #deebff;
+}
+
+.search-filter .search-filter-box:hover i {
+    background-color: #fff;
+}
+
+.search-filter-box i {
+    display: inline-block;
+    margin-right: 15px;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: #deebff;
+    color: #0065fc;
+    font-size: 20px;
+}
+
+/* ------------------------------------------------------Bloc Information ----------------------------------------------- */
+
 .information {
-    display: flex;
-    align-items: center;
     margin: 40px 0;
 }
 
-.information a {
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    font-size: 10px;
-    vertical-align: middle;
+.information .information-logo {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 20px;
     text-align: center;
-    margin-right: 10px;
-    border: 1px solid #f2f2f2;
+    border: 1px solid #d9d9d9;
     border-radius: 100%;
     color: #0065fc;
+    flex-shrink: 0;
+}
+/* Flex-shrink pour eviter le retrecissement du logo, de base 1 */
+
+.information-texte {
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    height: 50px;
 }
 
-.information p {
-    margin: 0;
-}
+/* --------------------Container Hosting and Popularity--------------------- */
 
-/* Container Hosting and Popularity */
-
-.hosting_and_popularity_container {
+.hosting-and-popularity-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -246,65 +240,61 @@ form input::placeholder {
     height: auto;
 }
 
-.hosting_flex {
+.hosting-flex {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 40px;
+    margin: 40px 0;
 }
-.hosting_card {
+.hosting-card {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    width: 30%;
+    width: 250px;
+    height: auto;
+    margin: 0 10px 20px;
+    flex-grow: 1;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.22);
     padding: 7px;
-    margin-bottom: 40px;
     transition: all 0.2s ease-in-out;
 }
 
-.hosting_card:hover {
+/* Flex GROW en Rapport au PARENT hosting-flex s'agrandie si espace disponible */
+
+.hosting-card:hover {
     transform: scale(1.1);
 }
-
-.hosting_card img {
-    height: 110px;
+.hosting-card-img {
     width: 100%;
-    object-fit: cover;
+    height: 110px;
+    overflow: hidden;
     border-radius: 10px 20px 0 0;
 }
+.hosting-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-.hosting_card h3 {
+.hosting-card h3 {
     margin: 7px 10px;
     font-size: 17px;
 }
-.hosting_card .hosting_card_price {
+.hosting-card .hosting-card-price {
     margin: 0 10px 15px;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 14px;
 }
 
-.hosting_card p span {
+.hosting-card p span {
     font-weight: 700;
 }
 
-.stars {
-    margin: auto 10px 0;
-    color: #0065fc;
-}
-
-.stars .fa-grey {
-    color: #f2f2f2;
-}
-
-.hosting h2 {
-    font-size: 25px;
-}
-
-.hosting a {
+.hosting .hosting-more {
     font-size: 18px;
+    padding-top: 20px;
     font-weight: 700;
 }
 
@@ -318,89 +308,77 @@ form input::placeholder {
     height: auto;
 }
 
-.popularity_header {
+.popularity-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.popularity_header h2 {
-    font-size: 25px;
-}
-.popularity_header i {
+    margin-bottom: 20px;
     font-size: 25px;
 }
 
-.popularity_flex {
+popularity-container {
     display: flex;
     flex-direction: column;
 }
 
-.popularity_flex_card {
+.popularity-card-card {
     display: flex;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.22);
-    margin: 40px 0;
+    margin: 20px 0;
     padding: 1%;
-    min-height: 130px;
-    height: 100%;
     transition: all 0.2s ease-in-out;
+    width: 100%;
+    height: 150px;
 }
 
-.popularity_flex_card:nth-child(2) {
+.popularity-card-card:nth-child(2) {
     margin: 0;
 }
-.popularity_flex_card:hover {
+.popularity-card-card:hover {
     transform: scale(1.1);
 }
-.popularity_img_card {
-    position: relative;
-    min-height: 100%;
-    width: 33%;
-    min-width: 33%;
-    max-width: 33%;
+.popularity-img-card {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    min-width: 40%;
 }
 
-.popularity_img_card img {
-    position: absolute;
+.popularity-img-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     border-radius: 20px 0 0 20px;
+    object-fit: cover;
 }
 
-/* Position absolute Fix Height img */
-
-.popularity_info_card {
+.popularity-info-card {
     display: flex;
     flex-direction: column;
     padding-left: 10px;
 }
 
-/* Min-height fixe la taille minimale pour la Flex_card */
-.popularity_info_card h3 {
+.popularity-info-card h3 {
     font-size: 17px;
-    margin: 5px 10px;
+    margin-top: 5px;
 }
 
-.popularity_info_card p {
-    font-size: 15px;
-    margin: 10px 10px;
+.popularity-info-card p {
+    font-size: 14px;
+    margin-top: 15px;
+}
+.popularity-info-card .stars {
+    margin: auto 0 5px;
 }
 
-.popularity_info_card .stars {
-    margin-top: auto;
-    padding-bottom: 2%;
-}
-
-.popularity_info_card p span {
+.popularity-info-card p span {
     font-weight: 700;
 }
 
 /* -----------Section Activity-------------------- */
 
-.activity_container {
+.activity-container {
     display: flex;
     flex-flow: column wrap;
     align-content: space-between;
@@ -410,7 +388,7 @@ form input::placeholder {
     margin: 40px auto 0;
 }
 
-.activity_container a {
+.activity-container a {
     display: block;
     width: 100%;
     height: 100%;
@@ -459,7 +437,7 @@ form input::placeholder {
     height: 200px;
 }
 
-.activity_name {
+.activity-name {
     height: 60px;
     width: 100%;
     background-color: #fff;
@@ -474,7 +452,7 @@ form input::placeholder {
     overflow: hidden;
 }
 
-.activity_name h4 {
+.activity-name h4 {
     font-size: 16px;
 }
 
@@ -519,59 +497,100 @@ footer {
 
 @media only screen and (max-width: 992px) {
     .container {
-        padding: 0;
+        padding: 0px;
     }
-    .filter {
+
+    .search-section {
+        padding: 0 20px;
+    }
+    .search-section .search-section-texte {
+        font-size: 18px;
+    }
+
+    .search-section form {
+        justify-content: center;
+    }
+    .search-section form label {
+        display: block;
+        width: 62px;
+        height: 62px;
+    }
+    .search-section .btn {
+        display: block;
+        position: relative;
+        font-size: 0;
+        border-radius: 10px;
+        width: 62px;
+        height: 62px;
+    }
+
+    .search-section .btn:before {
+        position: absolute;
+        font-family: "FontAwesome";
+        font-size: 18px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        content: "\f002";
+        cursor: pointer;
+    }
+    .search-filter {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
     }
 
-    .filter h2 {
-        margin-bottom: 20px;
+    .search-filter h2 {
+        align-self: flex-start;
+        font-size: 18px;
+        margin: 10px;
     }
 
-    .filter_container {
-        align-self: center;
+    .search-filter-box {
+        margin: 5px;
     }
-    .hosting_and_popularity_container {
+
+    .information-texte {
+        font-size: 15px;
+    }
+
+    .hosting-and-popularity-container {
         flex-direction: column-reverse;
     }
 
+    .hosting {
+        width: 100%;
+        background-color: #fff;
+    }
+    .hosting-card-img {
+        height: 150px;
+    }
     .popularity {
         width: 100%;
+        border-radius: 0;
     }
-    .popularity_flex {
+    popularity-container {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: stretch;
     }
-    .popularity_flex_card {
+    .popularity-card-card {
         width: 100%;
-        min-height: 150px;
+        height: 170px;
     }
-    .hosting {
-        width: 100%;
-        background-color: #fff;
-    }
-    .hosting_card {
-        width: 45%;
-    }
-    .hosting_card img {
-        min-height: 150px;
-    }
-    .activity, .form_section {
+
+    .activity,
+    .form_section {
         padding: 0 35px;
     }
-    .activity_container {
+    .activity-container {
         flex-flow: column;
         height: auto;
         width: 100%;
         margin: 40px auto 0;
     }
 
-    .activity_container a {
+    .activity-container a {
         display: block;
         width: 100%;
         height: 100%;
@@ -592,74 +611,96 @@ footer {
     .Activity6 {
         height: 250px;
     }
-    form {
-        justify-content: center;
-    }
-    .btn {
-        position: relative;
-        font-size: 0;
-        border-radius: 10px;
-    }
-    .btn:before {
-        position: absolute;
-        font-family: "FontAwesome";
-        font-size: 18px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        content: "\f002";
-        cursor: pointer;
-    }
-}
 
-@media only screen and (max-width: 768px) {
-    header {
-        flex-direction: column;
-        height: auto;
-        margin: 20px 0 40px;
-    }
+    @media only screen and (max-width: 768px) {
+        /* ---------------------------------------------------------HEADER --------------------------------------------------------------------*/
 
-    .logo img {
-        padding-left: 0;
-    }
-    nav {
-        display: block;
-        width: 100%;
-        margin: 0;
-    }
-    nav ul {
-        width: 100%;
-    }
-    nav ul li {
-        width: 55%;
-    }
-    nav ul li a {
-        width: 100%;
-        padding: 20px 0;
-    }
+        header {
+            flex-direction: column;
+            height: auto;
+            margin: 20px 0 40px;
+        }
 
-    nav ul li a.active::before {
-        top: 100%;
-        left: 0px;
-        width: 100%;
-        z-index: 1;
-    }
-    nav ul li a::after {
-        top: 100%;
-        width: 100%;
-        background-color: #f2f2f2;
-        opacity: 1;
-        z-index: -1;
-    }
+        .logo img {
+            padding-left: 0;
+        }
+        nav {
+            display: block;
+            width: 100%;
+            margin: 0;
+        }
+        nav ul {
+            width: 100%;
+        }
+        nav ul li {
+            width: 55%;
+        }
+        nav ul li a {
+            width: 100%;
+            padding: 20px 0;
+        }
 
-    .hosting_card {
-        width: 100%;
-    }
-    .footer-container {
-        flex-direction: column;
-    }
+        nav ul li a.active::before {
+            top: 100%;
+            left: 0px;
+            width: 100%;
+            z-index: 1;
+        }
+        nav ul li a::after {
+            top: 100%;
+            width: 100%;
+            background-color: #f2f2f2;
+            opacity: 1;
+            z-index: -1;
+        }
 
-    .footer-div {
-        margin: 0;
+        .search-filter-box i {
+            padding: 10px;
+        }
+
+        .information .information-logo {
+            margin-right: 10px;
+            height: 20px;
+            width: 20px;
+            line-height: 20px;
+            font-size: 12px;
+            align-self: flex-start;
+        }
+
+        .information-texte {
+            align-items: flex-start;
+        }
+        .title {
+            font-size: 20px;
+        }
+
+        .hosting {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .popularity {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .popularity-info-card h3 {
+            font-size: 15px;
+            margin-left: 0;
+        }
+        .stars {
+            margin-left: 0;
+        }
+
+        .popularity-info-card p {
+            font-size: 13px;
+            margin: 10px 10px;
+            margin-left: 0;
+        }
+        .footer-container {
+            flex-direction: column;
+        }
+
+        .footer-div {
+            margin: 0;
+        }
     }
 }
