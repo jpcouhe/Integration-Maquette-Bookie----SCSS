@@ -60,7 +60,7 @@ nav ul {
     display: flex;
 }
 
-nav ul li a {
+nav ul li .header-link {
     padding: 51px 20px;
     width: 150px;
     display: block;
@@ -70,8 +70,27 @@ nav ul li a {
 }
 
 /* Pseudo element sinon lors hover scintillement du à bordure */
+.header-link.active{
+    color: #0065fc;
+}
+nav ul li .header-link.active::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 150px;
+    height: 4px;
+    background-color: #0065fc;
+    opacity: 1;
+}
+.header-link:hover {
+    color: #0065fc;
+}
+.header-link:hover:before {
+    opacity: 1;
+}
 
-nav ul li .header-link::after {
+.header-link::before {
     content: "";
     position: absolute;
     top: -2px;
@@ -80,27 +99,7 @@ nav ul li .header-link::after {
     height: 4px;
     background-color: #0065fc;
     opacity: 0;
-}
-.header-link:hover {
-    color: #0065fc;
-}
-.header-link:hover:after {
-    opacity: 1;
-}
-
-.active {
-    color: #0065fc;
-}
-
-.header-link.active::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: 0;
-    width: 150px;
-    height: 4px;
-    background-color: #0065fc;
-}
+} 
 
 /* ------------------------------------------------SECTION FORM -------------------------------------------------------------------*/
 .search-section {
@@ -250,15 +249,14 @@ nav ul li .header-link::after {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    width: 250px;
-    height: auto;
+    width: 29%;
     margin: 0 10px 20px;
     flex-grow: 1;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.22);
     padding: 7px;
-    transition: all 0.2s ease-in-out;
+    
 }
 
 /* Flex GROW en Rapport au PARENT hosting-flex s'agrandie si espace disponible */
@@ -328,7 +326,7 @@ popularity-container {
     box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.22);
     margin: 20px 0;
     padding: 1%;
-    transition: all 0.2s ease-in-out;
+    
     width: 100%;
     height: 150px;
 }
@@ -399,7 +397,7 @@ popularity-container {
     margin-bottom: 35px;
     border-radius: 20px;
     position: relative;
-    transition: all 0.2s ease-in-out;
+    
 }
 
 .item img {
@@ -561,6 +559,10 @@ footer {
         width: 100%;
         background-color: #fff;
     }
+
+    .hosting-card {
+        width: 45%;
+    }
     .hosting-card-img {
         height: 150px;
     }
@@ -600,7 +602,7 @@ footer {
         margin-bottom: 35px;
         border-radius: 20px;
         position: relative;
-        transition: all 0.2s ease-in-out;
+        
     }
     .Activity1,
     .Activity2,
@@ -610,8 +612,10 @@ footer {
     .Activity6 {
         height: 250px;
     }
+}
 
-    @media only screen and (max-width: 768px) {
+
+@media only screen and (max-width: 768px) {
     
         header {
             flex-direction: column;
@@ -633,25 +637,34 @@ footer {
         nav ul li {
             width: 55%;
         }
-        nav ul li a {
+        nav ul li .header-link {
             width: 100%;
             padding: 20px 0;
         }
 
-        nav ul li a.active::before {
+        .header-link::before {
             top: 100%;
             left: 0px;
             width: 100%;
             z-index: 1;
-        }
-        nav ul li a::after {
+            opacity: -1;
+        } 
+        nav ul li .header-link.active::after {
             top: 100%;
             width: 100%;
-            background-color: #f2f2f2;
             opacity: 1;
-            z-index: -1;
+            z-index: 2;
         }
-
+        .header-link::before {
+            
+            top: 100%;
+            left: 0px;
+            width: 100%;
+            z-index: 1;
+            opacity: -1;
+            background-color: #f1f1f1;
+            opacity: 1;
+        } 
         .search-filter-box i {
             padding: 10px;
         }
@@ -676,6 +689,11 @@ footer {
             padding: 45px 15px 10px;
 
         }
+
+        .hosting-card {
+            width: 100%;
+        }
+        
         .popularity {
             padding-left: 15px;
             padding-right: 15px;
@@ -704,5 +722,6 @@ footer {
         .footer-div {
             margin: 0;
         }
-    }
 }
+
+
